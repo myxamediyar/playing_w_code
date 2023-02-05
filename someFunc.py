@@ -171,4 +171,21 @@ def subarray_sum(li):
     print(li[res[0]:res[1] + 1])
     return sum(li[res[0]:res[1] + 1])
 
-print(subarray_sum([-2,1,-3,4,-1,2,1,-5,4]))
+#print(subarray_sum([-2,1,-3,4,-1,2,1,-5,4]))
+
+
+def num_to_b(x):
+    if int(x) <= 10:
+        return bin(int(x))
+    x = x[::-1]
+    nr, nl = x[0:len(x) // 2], x[len(x) // 2:len(x)]
+    x = x[::-1]
+    nr = nr[::-1]
+    nl = nl[::-1]
+    resl = num_to_b(nl)
+    resr = num_to_b(nr)
+    res_10p = num_to_b(str(10 ** (len(x) // 2))) #left shift
+    resl = bin(int(resl, 2) * int(res_10p, 2)) #karatsubra
+    return bin(int(resl, 2) + int(resr, 2))
+
+print(num_to_b('420'))
