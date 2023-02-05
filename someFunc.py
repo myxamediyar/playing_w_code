@@ -184,8 +184,8 @@ def num_to_b(x):
     nl = nl[::-1]
     resl = num_to_b(nl)
     resr = num_to_b(nr)
-    res_10p = num_to_b(str(10 ** (len(x) // 2))) #left shift
-    resl = bin(int(resl, 2) * int(res_10p, 2)) #karatsubra
+    res_10p = num_to_b(str(10 ** (len(x) // 2))) #left shift O(n)
+    resl = bin(int(resl, 2) * int(res_10p, 2)) #karatsuba O(n^1.6)
     return bin(int(resl, 2) + int(resr, 2))
 
 print(num_to_b('420'))
