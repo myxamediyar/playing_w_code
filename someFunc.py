@@ -188,6 +188,7 @@ def num_to_b(x):
     return bin(int(resl, 2) + int(resr, 2))
 #print(num_to_b('420'))
 
+#region test-cases
 #garbo algo ezz
 def cycle(f1, f2, f3):
     def helpern(n):
@@ -226,5 +227,5 @@ print(do_more_than_a_cycle(2))
 do_two_cycles = my_cycle(6)
 print(do_two_cycles(1))
 #19
-            
+#endregion test-cases      
             
