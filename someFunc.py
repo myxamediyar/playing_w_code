@@ -196,7 +196,6 @@ def num_to_b(x):
 #print(num_to_b('420'))
 #endregion num_to_bin
 
-
 #region test-cases
 #garbo algo ezz
 def cycle(f1, f2, f3):
@@ -339,7 +338,6 @@ c = perms([100])
 # print(sorted(perms("ab")))
 #endregion generator
 
-
 #region nlenpipe
 
 n = list(range(1, 9))
@@ -388,3 +386,11 @@ def countInterpretation(s, d):
 
 print(countInterpretation(s, d))
 #endregion striginterpretation
+
+
+#region coffedrop
+
+# def solvedp():
+#     memo = {}
+#     def 
+#endregion coffeedrop
