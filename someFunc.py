@@ -384,13 +384,39 @@ def countInterpretation(s, d):
         return count
     return f(s, d)
 
-print(countInterpretation(s, d))
+# print(countInterpretation(s, d))
 #endregion striginterpretation
 
 
-#region coffedrop
+#region TriangulatingAPolygon
+polygon = ((-1, 4), (1, 4), (2,2), (1,0), (-1, 0), (-2,2))
+def distl(pi, pj):
+    res =  np.sqrt(abs(pi[0] - pj[0])**2 + abs(pi[1] - pj[1])**2)
+    return res
+def outertriangulation(p):
+    memo = {}
+    d = {}
+    def cost(p):
+        n = len(p)
+        if n <= 3:
+            d[p] = None
+            return 0
+        if p in memo:
+            return memo[p]
+        res = np.inf
+        for i in range(n):
+            for j in range(i + 2, n):
+                if (i, j) == (0, len(p) - 1):
+                    continue
+                left = tuple([p[z] for z in range(i + 1)] + [p[z] for z in range(j, n)])
+                right = tuple([p[z] for z in range(i, j + 1)])
+                x = cost(left) + cost(right) + distl(p[i], p[j])
+                if res > x:
+                    res = x
+                    d[p] = [(p[i], p[j]), d[left], d[right]]
+        return res
+    res = cost(p)
+    print(d[p])
+    return res
 
-# def solvedp():
-#     memo = {}
-#     def 
-#endregion coffeedrop
+print(outertriangulation(polygon))
